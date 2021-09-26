@@ -1,11 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Homepage from './pages/homepage';
+import Hats from './pages/hats';
 
 import './App.css';
-class App extends Component {
-  render() {
-    return <Homepage />
-  }
+
+const App = () => {
+  return (
+    <div>
+      <Switch>
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/hats' component={Hats} />
+      </Switch>
+    </div>
+  )
 }
 
 export default App;
