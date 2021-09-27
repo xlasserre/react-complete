@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import MenuItem from '../menu-item'
+import MenuItem from '../menuItem'
 import importedSections from './sections'
 
 import './directory.styles.scss'
