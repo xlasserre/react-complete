@@ -4,6 +4,7 @@ import Homepage from './pages/homepage';
 import Header from './components/header';
 import Shop from './pages/shop';
 import Hats from './pages/hats';
+import Auth from './pages/auth';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ const App = () => {
         <Route exact path='/' component={Homepage} />
         <Route exact path='/shop' component={Shop} />
         <Route exact path='/hats' component={Hats} />
+        <Route exact path='/signin' component={Auth} />
       </Switch>
     </div>
   )
