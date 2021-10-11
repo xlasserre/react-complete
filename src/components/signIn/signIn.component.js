@@ -2,6 +2,8 @@ import React, { useState, useMemo } from 'react'
 import FormInput from '../formInput'
 import CustomButton from '../customButton'
 
+import { signInWithGoogle } from '../../firebase/firebase.utils'
+
 import './signIn.styles.scss'
 
 const SignIn = () => {
@@ -38,8 +40,11 @@ const SignIn = () => {
           required
           handleChange={handleChange}
         />
-
-        <CustomButton type='submit'>Sign In</CustomButton>
+        <div className='buttons'>
+          <CustomButton type='submit'>Sign In</CustomButton>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign In With Google</CustomButton>
+        </div>
+        
       </form>
     </div>
   )
