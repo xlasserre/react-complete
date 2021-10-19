@@ -23,6 +23,7 @@ const App = () => {
       }
 
       setCurrentUser(userAuth);
+      console.log('currentUser: ', currentUser)
     })
 
 
