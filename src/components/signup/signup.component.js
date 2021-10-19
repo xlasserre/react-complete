@@ -19,6 +19,7 @@ const Signup = () => {
     e.preventDefault();
 
     const { displayName, email, password, confirmPassword } = user
+    console.log('user: ', user)
 
     if (password !== confirmPassword) {
       alert('Passwords don\'t match')

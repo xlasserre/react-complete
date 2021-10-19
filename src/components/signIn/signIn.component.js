@@ -2,15 +2,26 @@ import React, { useState, useMemo } from 'react'
 import FormInput from '../formInput'
 import CustomButton from '../customButton'
 
-import { signInWithGoogle } from '../../firebase/firebase.utils'
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
 
 import './signIn.styles.scss'
 
 const SignIn = () => {
   const [user, setUser] = useState({ email: '', password: '', })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const { email, password } = user
+    try {
+      await auth.signInWithEmailAndPassword(email, password)
+      setUser({
+        email: '', 
+        password: '',
+      })
+    } catch (error) {
+      console.log('error: ', error)
+    }
   }
 
   const handleChange = useMemo((e) => (e) => {
